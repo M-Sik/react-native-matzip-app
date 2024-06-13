@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-export default function MapHomeScreen() {
+export default function SignupScreen() {
   return (
     <View>
-      <Text>맵 스크린2</Text>
+      <Text>회원가입</Text>
     </View>
   );
 }
