@@ -1,6 +1,6 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {AuthStackParamList} from '../../navigations/stack/AuthStackNavigator';
 import {authNavigations} from '../../constants/navigations';
 import CustomButton from '../../components/CustomButton';
@@ -12,8 +12,11 @@ type Props = StackScreenProps<
 
 export default function AuthHomeScreen({navigation}: Props) {
   return (
-    <SafeAreaView>
-      <View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.logoContainer}>
+        <Text style={styles.logoText}>MATZIP APP</Text>
+      </View>
+      <View style={styles.btnContainer}>
         <CustomButton
           label="로그인 하기"
           onPress={() => navigation.navigate(authNavigations.LOGIN)}
@@ -27,3 +30,28 @@ export default function AuthHomeScreen({navigation}: Props) {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoContainer: {
+    width: '100%',
+    marginBottom: 48,
+  },
+  logoText: {
+    fontSize: 32,
+    textAlign: 'center',
+    fontWeight: '700',
+  },
+  btnContainer: {
+    width: '100%',
+    paddingHorizontal: 16,
+    display: 'flex',
+    gap: 12,
+  },
+});
